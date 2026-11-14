@@ -1,23 +1,22 @@
 :root {
-  /* Layout idea: a friendly tutor's page. Warm paper background, rounded lettering, soft pastel cards,
-     a sunny yellow for the main action and green only for WhatsApp. Phone first, one column. */
-  --bg: #fffbf4;
-  --soft: #fff2df;
-  --ink: #2a2742;
-  --ink-soft: #625f78;
-  --rule: #f0e3cf;
-  --blue: #2f62c4;
-  --blue-deep: #244f9f;
-  --blue-soft: #e7f0ff;
-  --sun: #ffcf4a;
-  --sun-deep: #e2ac12;
-  --mint: #e2f5e8;
-  --peach: #ffe6d2;
+  /* Layout idea: a teacher's professional page. White ground, serif headings for credibility, navy text,
+     one thin amber accent, muted panels. Phone first, one column, proof (who, where, credentials, reviews) first. */
+  --bg: #ffffff;
+  --soft: #f7f5f1;
+  --ink: #1b2440;
+  --ink-soft: #586079;
+  --rule: #e6e2da;
+  --blue: #27509e;
+  --blue-deep: #1d3d7a;
+  --blue-soft: #f0f4fa;
+  --sand: #f8f2e6;
+  --sun: #f0b429;
   --green: #128a48;
   --green-deep: #0c6b37;
   --gold: #e3a008;
-  --r: 22px;
-  --font: "Nunito", "Trebuchet MS", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 12px;
+  --font: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-head: "Source Serif 4", Georgia, "Times New Roman", serif;
   color-scheme: light;
 }
 * { box-sizing: border-box; }
@@ -185,43 +184,39 @@ form small { color: var(--ink-soft); text-align: center; }
 footer { background: var(--soft); border-top: 1px solid var(--rule); color: var(--ink-soft); font-size: 0.9rem; padding-bottom: 84px; }
 footer .wrap { display: flex; flex-direction: column; gap: 6px; padding-top: 22px; padding-bottom: 22px; }
 
-/* Friendly theme */
-h1, h2, .brand, .board .tag, .contact-copy .lines b { font-weight: 900; }
-.mark { color: inherit; background: linear-gradient(transparent 60%, var(--sun) 60%); padding: 0 3px; border-radius: 3px; }
-.top { background: var(--bg); border-bottom-color: var(--rule); }
-.brand-name i { color: var(--blue); font-weight: 800; }
-.btn { background: var(--sun); color: var(--ink) !important; border-radius: 999px; font-weight: 800; box-shadow: 0 4px 0 var(--sun-deep); }
-.btn:hover { background: #ffd866; }
-.btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--sun-deep); }
-.btn.small { border-radius: 999px; box-shadow: 0 3px 0 var(--green-deep); }
-.btn[href*="wa.me"] { color: #fff !important; box-shadow: 0 4px 0 var(--green-deep); }
-.btn.ghost, .btn.ghost.light { background: #fff; box-shadow: inset 0 0 0 2px var(--ink); }
-.btn.ghost[href*="wa.me"] { background: #fff; color: var(--green-deep) !important; box-shadow: inset 0 0 0 2px var(--green); }
-.teacher { background: #fff; box-shadow: 0 6px 20px rgba(120, 84, 20, 0.10); }
-.teacher figcaption b { font-size: 1.15rem; font-weight: 900; }
-.facts { background: var(--bg); border-color: var(--rule); }
-.facts li::before, .panel li::before { background-color: var(--green); }
-.panel, .steps li, .quote, .faq details, form, .countries a, table.times { border: 0; box-shadow: 0 4px 16px rgba(120, 84, 20, 0.08); background: #fff; }
-.panel.kochi { background: var(--blue-soft); box-shadow: none; }
-.panel.abroad { background: var(--peach); box-shadow: none; }
+/* Tone: calm and professional */
+body { font-size: 18px; }
+h1, h2, .brand, .board .tag { font-family: var(--font-head); font-weight: 700; letter-spacing: -0.01em; }
+.brand-name i { font-style: italic; font-weight: 500; color: var(--ink-soft); }
+.mark { color: inherit; box-shadow: inset 0 -0.12em 0 var(--sun); }
+.btn { background: var(--ink); color: #fff !important; border-radius: 10px; }
+.btn:hover { background: #2b3764; }
+.btn.small { border-radius: 8px; }
+.btn[href*="wa.me"] { background: var(--green); }
+.btn[href*="wa.me"]:hover { background: var(--green-deep); }
+.btn.ghost, .btn.ghost.light { background: var(--bg); color: var(--ink) !important; box-shadow: inset 0 0 0 1.5px var(--ink); }
+.btn.ghost[href*="wa.me"] { background: var(--bg); color: var(--green-deep) !important; box-shadow: inset 0 0 0 1.5px var(--green); }
+a.eyebrow { text-decoration: none; color: var(--ink); }
+a.eyebrow:hover { text-decoration: underline; }
+.teacher { background: var(--soft); border: 1px solid var(--rule); }
+.teacher .photo-img { box-shadow: 0 0 0 3px #fff, 0 2px 10px rgba(27, 36, 64, 0.18); }
+.teacher figcaption b { font-family: var(--font-head); font-size: 1.2rem; }
+.modes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; }
+.modes li { display: flex; flex-direction: column; gap: 1px; padding: 12px 14px; border: 1px solid var(--rule); border-left: 3px solid var(--sun); border-radius: 10px; background: var(--bg); text-align: left; font-size: 0.92rem; color: var(--ink-soft); line-height: 1.35; }
+.modes b { color: var(--ink); font-size: 1rem; }
+.facts li::before, .panel li::before { background-color: var(--ink); }
+.panel.kochi { background: var(--blue-soft); border-color: transparent; }
+.panel.abroad { background: var(--sand); border-color: transparent; }
 .panel p, .panel li { color: var(--ink); }
-.steps li:nth-child(1)::before { background: var(--blue-soft); color: var(--blue-deep); }
-.steps li:nth-child(2)::before { background: var(--peach); color: #a3501a; }
-.steps li:nth-child(3)::before { background: var(--mint); color: var(--green-deep); }
+.steps li::before { background: var(--blue-soft); color: var(--blue-deep); }
 .chips { display: block; color: var(--ink); font-size: 0.97rem; line-height: 1.7; }
 .chips li { display: inline-block; background: none; border: 0; padding: 0; font-size: inherit; }
-.chips li + li::before { content: "  ·  "; color: var(--sun-deep); font-weight: 900; white-space: pre; }
-.about blockquote { border-left: 0; background: var(--mint); padding: 22px 24px; border-radius: var(--r); font-weight: 700; }
+.chips li:not(:last-child)::after { content: "  ·"; color: var(--ink-soft); white-space: pre; margin-right: 0.45em; }
+.about blockquote, .quote blockquote { font-family: var(--font-head); font-style: italic; font-weight: 500; }
+.about blockquote { border-left: 3px solid var(--sun); padding: 2px 0 2px 18px; font-size: 1.2rem; }
 .reviews .box { background: var(--blue-soft); }
-.countries a[aria-current="page"] { background: var(--peach); }
-.countries a::after { color: var(--blue); }
-table.times th { background: var(--peach); }
-input, select { border-color: #e2d3bb; border-radius: 14px; }
-.actionbar { background: var(--bg); border-top-color: var(--rule); }
-.actionbar .call { background: #fff; box-shadow: inset 0 0 0 2px var(--ink); }
-.actionbar .btn[href*="wa.me"] { box-shadow: none; }
-footer { background: var(--soft); border-top-color: var(--rule); }
-@media (max-width: 859px) { .teacher .photo-img { box-shadow: 0 0 0 3px var(--sun); } }
+.countries a[aria-current="page"] { background: var(--sand); border-color: var(--sand); }
+input, select { border-color: #cfcabf; }
 
 /* Wider screens */
 @media (min-width: 560px) {
@@ -243,9 +238,10 @@ footer { background: var(--soft); border-top-color: var(--rule); }
   .eyebrow, .cta-row { justify-content: center; }
   .lead { font-size: 1.18rem; }
   .teacher { gap: 18px; padding: 16px 28px 16px 16px; text-align: left; }
-  .teacher .photo-img { width: 92px; height: 92px; box-shadow: 0 0 0 3px var(--sun); }
+  .teacher .photo-img { width: 92px; height: 92px; }
   .teacher figcaption { font-size: 1rem; }
-  .teacher figcaption b { font-size: 1.35rem; }
+  .teacher figcaption b { font-size: 1.4rem; }
+  .modes { max-width: 560px; }
   .facts ul { grid-template-columns: repeat(4, 1fr); padding: 26px 0; }
   section { padding: 76px 0; }
   .sec-head { margin-bottom: 32px; }
