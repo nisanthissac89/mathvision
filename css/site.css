@@ -206,3 +206,8 @@ table.times th { background: var(--ink); color: #fff; font-weight: 600; }
 
 .hero .photo-img { max-width: 360px; justify-self: end; }
 @media (max-width: 820px) { .hero .photo-img { justify-self: start; } }
+
+/* Wordmark */
+.brand-name { white-space: nowrap; }
+.brand-name i { font-style: normal; font-weight: 500; color: var(--teal); }
+@media (max-width: 480px) { .brand { font-size: 1.05rem; gap: 8px; } .brand svg { width: 30px; height: 30px; } }
