@@ -1,19 +1,23 @@
 :root {
-  /* Layout idea: phone first. One column, plain white, large tap targets, proof (rating, degrees, years) before persuasion.
-     Navy for text, one calm blue for actions, green only for WhatsApp. */
-  --bg: #ffffff;
-  --soft: #f5f7fa;
-  --ink: #0f1f3d;
-  --ink-soft: #52607a;
-  --rule: #e2e7ef;
-  --blue: #1b4fd1;
-  --blue-deep: #153fa8;
-  --blue-soft: #eef3fe;
-  --green: #0f7a40;
-  --green-deep: #0b6233;
-  --gold: #d99a00;
-  --r: 14px;
-  --font: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* Layout idea: a friendly tutor's page. Warm paper background, rounded lettering, soft pastel cards,
+     a sunny yellow for the main action and green only for WhatsApp. Phone first, one column. */
+  --bg: #fffbf4;
+  --soft: #fff2df;
+  --ink: #2a2742;
+  --ink-soft: #625f78;
+  --rule: #f0e3cf;
+  --blue: #2f62c4;
+  --blue-deep: #244f9f;
+  --blue-soft: #e7f0ff;
+  --sun: #ffcf4a;
+  --sun-deep: #e2ac12;
+  --mint: #e2f5e8;
+  --peach: #ffe6d2;
+  --green: #128a48;
+  --green-deep: #0c6b37;
+  --gold: #e3a008;
+  --r: 22px;
+  --font: "Nunito", "Trebuchet MS", system-ui, -apple-system, "Segoe UI", sans-serif;
   color-scheme: light;
 }
 * { box-sizing: border-box; }
@@ -22,7 +26,7 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f
 img, svg { max-width: 100%; }
 a { color: var(--blue); text-underline-offset: 3px; }
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
-h1, h2, h3 { font-family: var(--font); line-height: 1.15; text-wrap: balance; margin: 0; letter-spacing: -0.02em; }
+h1, h2, h3 { font-family: var(--font); line-height: 1.2; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
 h1 { font-size: 1.95rem; font-weight: 800; }
 h2 { font-size: 1.55rem; font-weight: 800; }
 h3 { font-size: 1.12rem; font-weight: 700; letter-spacing: -0.01em; }
@@ -180,6 +184,44 @@ form small { color: var(--ink-soft); text-align: center; }
 
 footer { background: var(--soft); border-top: 1px solid var(--rule); color: var(--ink-soft); font-size: 0.9rem; padding-bottom: 84px; }
 footer .wrap { display: flex; flex-direction: column; gap: 6px; padding-top: 22px; padding-bottom: 22px; }
+
+/* Friendly theme */
+h1, h2, .brand, .board .tag, .contact-copy .lines b { font-weight: 900; }
+.mark { color: inherit; background: linear-gradient(transparent 60%, var(--sun) 60%); padding: 0 3px; border-radius: 3px; }
+.top { background: var(--bg); border-bottom-color: var(--rule); }
+.brand-name i { color: var(--blue); font-weight: 800; }
+.btn { background: var(--sun); color: var(--ink) !important; border-radius: 999px; font-weight: 800; box-shadow: 0 4px 0 var(--sun-deep); }
+.btn:hover { background: #ffd866; }
+.btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--sun-deep); }
+.btn.small { border-radius: 999px; box-shadow: 0 3px 0 var(--green-deep); }
+.btn[href*="wa.me"] { color: #fff !important; box-shadow: 0 4px 0 var(--green-deep); }
+.btn.ghost, .btn.ghost.light { background: #fff; box-shadow: inset 0 0 0 2px var(--ink); }
+.btn.ghost[href*="wa.me"] { background: #fff; color: var(--green-deep) !important; box-shadow: inset 0 0 0 2px var(--green); }
+.teacher { background: #fff; box-shadow: 0 6px 20px rgba(120, 84, 20, 0.10); }
+.teacher figcaption b { font-size: 1.15rem; font-weight: 900; }
+.facts { background: var(--bg); border-color: var(--rule); }
+.facts li::before, .panel li::before { background-color: var(--green); }
+.panel, .steps li, .quote, .faq details, form, .countries a, table.times { border: 0; box-shadow: 0 4px 16px rgba(120, 84, 20, 0.08); background: #fff; }
+.panel.kochi { background: var(--blue-soft); box-shadow: none; }
+.panel.abroad { background: var(--peach); box-shadow: none; }
+.panel p, .panel li { color: var(--ink); }
+.steps li:nth-child(1)::before { background: var(--blue-soft); color: var(--blue-deep); }
+.steps li:nth-child(2)::before { background: var(--peach); color: #a3501a; }
+.steps li:nth-child(3)::before { background: var(--mint); color: var(--green-deep); }
+.chips { display: block; color: var(--ink); font-size: 0.97rem; line-height: 1.7; }
+.chips li { display: inline-block; background: none; border: 0; padding: 0; font-size: inherit; }
+.chips li + li::before { content: "  ·  "; color: var(--sun-deep); font-weight: 900; white-space: pre; }
+.about blockquote { border-left: 0; background: var(--mint); padding: 22px 24px; border-radius: var(--r); font-weight: 700; }
+.reviews .box { background: var(--blue-soft); }
+.countries a[aria-current="page"] { background: var(--peach); }
+.countries a::after { color: var(--blue); }
+table.times th { background: var(--peach); }
+input, select { border-color: #e2d3bb; border-radius: 14px; }
+.actionbar { background: var(--bg); border-top-color: var(--rule); }
+.actionbar .call { background: #fff; box-shadow: inset 0 0 0 2px var(--ink); }
+.actionbar .btn[href*="wa.me"] { box-shadow: none; }
+footer { background: var(--soft); border-top-color: var(--rule); }
+@media (max-width: 859px) { .teacher .photo-img { box-shadow: 0 0 0 3px var(--sun); } }
 
 /* Wider screens */
 @media (min-width: 560px) {
